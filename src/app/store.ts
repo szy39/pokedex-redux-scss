@@ -1,9 +1,15 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
+import { AppSlice } from "./slices/AppSlice"
+import { PokemonSlice } from "./slices/PokemonSlice"
+
 
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    app:AppSlice.reducer,
+    pokemon:PokemonSlice.reducer
+  },
 })
 
 setupListeners(store.dispatch)
