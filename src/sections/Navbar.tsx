@@ -30,7 +30,7 @@ function Navbar() {
         const index = navigationRoutes.findIndex(({route})=>location.pathname.includes(route))
 
         ul(index)
-      });
+      }, [location.pathname, navigationRoutes]);
 
       function ul(index:number) {
         const underlines = document.querySelectorAll<HTMLElement>(".underline")
