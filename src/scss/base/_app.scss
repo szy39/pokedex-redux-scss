@@ -26,4 +26,12 @@
         height: 80vh;
         padding-bottom: 10rem;
     }
+
+    ::-webkit-scrollbar{
+        background-color: transparent;
+        width: 0.4rem;
+        &-thumb {
+            background-color: rgba(219,219,219, 0.557);
+        }
+    }
 }
