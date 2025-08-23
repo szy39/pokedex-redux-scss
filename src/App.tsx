@@ -13,6 +13,7 @@ import MyList from './pages/MyList'
 import { ToastContainer , ToastOptions , toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 import { useAppDispatch, useAppSelector } from './app/hooks'
+import { clearToasts } from './app/slices/AppSlice'
 
 function App() {
 
@@ -21,9 +22,17 @@ const dispatch = useAppDispatch()
 
 useEffect(() => {
   if(toasts.length){
+    const toastOptions:ToastOptions={
+      position:"bottom-right",
+      autoClose:2000,
+      pauseOnHover:true,
+      draggable:true,
+      theme:"dark",
+    }
     toasts.forEach((message:string)=>{
-      toast(message);
-    })
+      toast(message,toastOptions);
+    });
+    dispatch(clearToasts())
   }
 }, [toasts,dispatch])
 
