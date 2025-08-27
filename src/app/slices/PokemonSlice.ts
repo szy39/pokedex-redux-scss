@@ -2,12 +2,15 @@ import { generatedPokemonType, PokemonTypeInitialState } from "../../utils/Types
 import { createSlice } from "@reduxjs/toolkit";
 import { getInitialPokemonData } from "../reducers/getInitialPokemonData";
 import { getPokemonData } from "../reducers/getPokemonData";
+import { aC } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
+import { getUserPokemons } from "../reducers/getUserokemons";
 
 
 const initialState:PokemonTypeInitialState ={
     allPokemon: undefined,
     randomPokemons:undefined,
     compareQueue:[],
+    userPokemons:[],
 }
 
 
@@ -42,6 +45,9 @@ export const PokemonSlice = createSlice({
         })
         builder.addCase(getPokemonData.fulfilled,(state,action)=>{
             state.randomPokemons = action.payload
+        });
+        builder.addCase(getUserPokemons.fulfilled,(state,action)=>{
+            state.userPokemons = action.payload!
         })
     }
 });
