@@ -7,7 +7,7 @@ nav {
         justify-content: center;
         align-items: center;
         svg{
-            color: white;
+            color:white;
             font-size: 2rem;
             cursor: pointer;
         }
@@ -52,7 +52,7 @@ nav {
     z-index: 0;
     bottom: 0;
  
-    background-color: white;
+    background-color: var(--accent-color);
     width: 20%;
     height: calc(4px/2);
     mix-blend-mode: initial;

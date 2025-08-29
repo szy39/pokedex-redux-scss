@@ -30,7 +30,7 @@
 }
 
 ::-webkit-scrollbar{
-    background-color: transparent;
+    background-color: var(--accent-color);
     width: 0.4rem;
     &-thumb{
         background-color: rgba(219,219,219, 0.557);
