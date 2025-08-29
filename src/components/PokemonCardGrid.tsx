@@ -7,6 +7,7 @@ import { useAppDispatch } from '../app/hooks'
 import { addToCompare } from '../app/slices/PokemonSlice'
 import { setToast } from '../app/slices/AppSlice'
 import { addPokemonToList } from '../app/reducers/addPokemonToList'
+import { removePokemon } from '../app/reducers/removePokemonFromUserList'
 function PokemonCardGrid({pokemons}:{pokemons:userPokemonsType[]}) {
     const location = useLocation()
     const navigate = useNavigate()
@@ -24,7 +25,10 @@ function PokemonCardGrid({pokemons}:{pokemons:userPokemonsType[]}) {
                                 <FaPlus className='plus' onClick={()=>dispatch(addPokemonToList(data))} />
                             ) : (
                                 
-                                    <FaTrash className='trash' />
+                                    <FaTrash className='trash' 
+                                    onClick={async ()=> {await 
+                                        dispatch(removePokemon({id:data.firebaseId!}))
+                                    dispatch(setToast(`${data.name.toUpperCase()} removed from your list.`))}}/>
                                 )
                             }
                         </div>
@@ -32,7 +36,7 @@ function PokemonCardGrid({pokemons}:{pokemons:userPokemonsType[]}) {
                             <IoGitCompare
                             onClick={()=>{
                                 dispatch(addToCompare(data))
-                                dispatch(setToast(`${data.name} has been added to Compare Queue`))
+                                dispatch(setToast(`${data.name.toUpperCase()} has been added to Compare Queue`))
                                 }} />
                         </div>
                         <h3 className='pokemon-card-title'>{data.name}</h3>
@@ -46,7 +50,10 @@ function PokemonCardGrid({pokemons}:{pokemons:userPokemonsType[]}) {
                                 const keys = Object.keys(type)
                                 return (
                                     <div className="pokemon-card-types-type" key={index}>
-                                        <img src={type[keys[0]].image} alt="pokemon type" className='pokemon-card-types-type-image' loading='lazy' />
+                                        <img src={type[keys[0]].image}
+                                         alt="pokemon type"
+                                          className='pokemon-card-types-type-image'
+                                           loading='lazy' />
                                         <h6 className='pokemon-card-types-type-text'>{keys[0]}</h6>
                                     </div>
                                 )

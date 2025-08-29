@@ -34,9 +34,9 @@ export const addPokemonToList = createAsyncThunk("pokemon/addPokemon",async(poke
                 email: userInfo.email
             })
             await dispatch(getUserPokemons())
-           dispatch(setToast(`${pokemon.name} added to your collection.`))
+           dispatch(setToast(`${pokemon.name.toUpperCase()} added to your collection.`))
         }else{
-            dispatch(setToast(`${pokemon.name} already part of your collection.`))
+            dispatch(setToast(`${pokemon.name.toUpperCase()} already part of your collection.`))
         }
     }catch(err) {}
 })

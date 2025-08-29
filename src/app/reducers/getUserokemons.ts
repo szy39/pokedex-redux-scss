@@ -35,7 +35,7 @@ export const getUserPokemons = createAsyncThunk("pokemon/userList",
 
                         userPokemons.push({
                             ...pokemons,
-                            firebaseId:pokemons.id,
+                            firebaseId:pokemon.id,
                             image,
                             types,
                         })
