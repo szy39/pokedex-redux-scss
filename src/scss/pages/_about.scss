@@ -18,7 +18,9 @@
     }
     &-image{
         height: 15rem;
-        border-radius: 2rem;
+        border-radius: 15rem;
+        border: 0.3rem solid var(--accent-color);
+        padding: 1rem;
     }
     &-links{
         display: flex;
