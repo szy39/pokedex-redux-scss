@@ -1,0 +1,123 @@
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    
+    .outer-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 24rem;
+        width: 24rem;
+        border: 0.2rem var(--accent-color) solid;
+        border-radius: 50%;
+        position: relative;
+        transition: all 0.3s ease;
+        
+        .inner-circle {
+            height: 20rem;
+            width: 20rem;
+            border: 0.3rem solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            
+            img {
+                max-width: 100%;
+                height: auto;
+                z-index: 100;
+                max-height: 17rem;
+                transition: all 0.3s ease;
+            }
+        }
+        
+        .lines {
+            display: flex;
+            gap: 3rem;
+            position: absolute;
+            
+            .line {
+                height: 28rem;
+                width: 0.3rem;
+                background-color: var(--accent-color);
+                transform: rotate(45deg);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    
+    // Tablet için
+    @media (max-width: 1024px) {
+        padding: 1.5rem;
+        
+        .outer-circle {
+            height: 20rem;
+            width: 20rem;
+            
+            .inner-circle {
+                height: 16rem;
+                width: 16rem;
+                
+                img {
+                    max-height: 14rem;
+                }
+            }
+            
+            .lines .line {
+                height: 24rem;
+            }
+        }
+    }
+    
+    // Mobil için
+    @media (max-width: 768px) {
+        padding: 1rem;
+        
+        .outer-circle {
+            height: 16rem;
+            width: 16rem;
+            
+            .inner-circle {
+                height: 13rem;
+                width: 13rem;
+                
+                img {
+                    max-height: 11rem;
+                }
+            }
+            
+            .lines {
+                gap: 2rem;
+                
+                .line {
+                    height: 20rem;
+                    width: 0.2rem;
+                }
+            }
+        }
+    }
+    
+    // Küçük mobil için
+    @media (max-width: 480px) {
+        .outer-circle {
+            height: 14rem;
+            width: 14rem;
+            
+            .inner-circle {
+                height: 11rem;
+                width: 11rem;
+                
+                img {
+                    max-height: 9rem;
+                }
+            }
+            
+            .lines .line {
+                height: 18rem;
+            }
+        }
+    }
+}

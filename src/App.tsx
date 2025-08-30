@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Wrapper from './sections/Wrapper'
 import Footer from './sections/Footer'
 import Navbar from './sections/Navbar'
 import Background from './components/Background'
