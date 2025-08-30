@@ -18,7 +18,7 @@ function About() {
         <a href="https://github.com/szy39">
         <FaGithub/>
         </a>
-        <a href="https://www.linkedin.com/in/eymen-y%C4%B1lmaz-380055378/">
+        <a href="https://www.linkedin.com/eyilmaz39">
         <FaLinkedin/>
         </a>
       </div>

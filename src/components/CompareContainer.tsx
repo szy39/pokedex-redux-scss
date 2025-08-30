@@ -3,9 +3,11 @@ import { pokemonStatType, pokemonTypeInterface, userPokemonsType } from '../util
 import { FaPlus } from 'react-icons/fa';
 import { pokemonTypes } from '../utils/getPokemonTypes';
 import { useAppDispatch } from '../app/hooks';
-import { removeFromCompare } from '../app/slices/PokemonSlice';
+import { removeFromCompare, setCurrentPokemon } from '../app/slices/PokemonSlice';
 import { useNavigate } from 'react-router-dom';
 import { addPokemonToList } from '../app/reducers/addPokemonToList';
+import { setPokemonTab } from '../app/slices/AppSlice';
+import { pokemonTabs } from '../utils/Constants';
 
 function CompareContainer({pokemon=undefined,isEmpty=false}:{
     pokemon?:userPokemonsType;
