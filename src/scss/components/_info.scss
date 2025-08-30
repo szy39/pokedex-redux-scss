@@ -1,0 +1,214 @@
+.details {
+    color: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    
+    &::before {
+      height: 0.3rem;
+      width: 9rem;
+      content: "";
+      background-color: var(--accent-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 0.5rem 0 0 0;
+    }
+    
+    .name {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    h3 {
+      margin: 0.5rem 0;
+    }
+    
+    button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: transparent;
+      border: 0.1rem solid var(--accent-color);
+      outline: none;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      border-radius: 0.3rem;
+      
+      &:hover {
+        background-color: var(--accent-color);
+      }
+    }
+    
+    // Mobil için
+    @media (max-width: 768px) {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      
+      .name {
+        font-size: 1.5rem;
+      }
+      
+      button {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+   
+  }
+  
+  .stats {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color:transparent;
+    border-radius: 0.5rem;
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      li {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 35%;
+        
+        progress {
+          transition: 2s ease-in-out;
+          width: 10rem;
+          height: 0.3rem;
+          -webkit-appearance: none;
+          appearance: none;
+          flex-shrink: 0;
+          
+          &::-webkit-progress-bar {
+            border-radius: 1rem;
+            height: 0.3rem;
+            background-color: rgba(255,255,255,0.3);
+          }
+          &::-webkit-progress-value {
+            border-radius: 1rem;
+            background-color: var(--accent-color);
+          }
+        }
+      }
+    }
+    
+    // Mobil için
+    @media (max-width: 768px) {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      
+      
+      ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        
+        progress {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .battle-stats {
+    color: white;
+    padding: 1.5rem;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    position: relative;
+    
+    &::before {
+      height: 0.3rem;
+      width: 9rem;
+      content: "";
+      background-color: var(--accent-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 0.5rem 0 0 0;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      letter-spacing: 0.1rem;
+      
+      li {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 1rem;
+        align-items: start;
+        
+        span:first-child {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+        
+        span:last-child {
+          word-wrap: break-word;
+        }
+      }
+    }
+    
+    .add-pokemon {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: transparent;
+      border: 0.1rem solid var(--accent-color);
+      outline: none;
+      color:var(--accent-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      border-radius: 0.3rem;
+      width: 100%;
+      
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+    }
+    
+    // Mobil için
+    @media (max-width: 768px) {
+      padding: 1rem;
+      
+      ul li {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        
+        span:first-child {
+          margin-bottom: 0.2rem;
+        }
+      }
+      
+      .add-pokemon {
+        margin-top: 1rem;
+        padding: 0.8rem;
+      }
+    }
+  }
+  
+  

@@ -13,7 +13,7 @@ function CapableMoves() {
             {pokemonData?.pokemonAbilities?.abilities.map((ability:string)=>(
                 <li key={ability}
                  className="move">
-                    {ability}
+                    {ability.toUpperCase()}
                     </li>
             ))}
         </ul>
@@ -23,7 +23,7 @@ function CapableMoves() {
             {pokemonData?.pokemonAbilities?.moves.map((move:string)=>(
                 <li key={move}
                  className="move">
-                    {move}
+                    {move.toUpperCase()}
                     </li>
             ))}
         </ul>

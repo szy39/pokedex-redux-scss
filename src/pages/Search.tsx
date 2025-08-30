@@ -24,12 +24,19 @@ function Search() {
   
   const handleChange = debounce((value:string)=>getPokemon(value),300)
   const getPokemon = async(value:string)=>{
-    if(value.length){
+    if(value === "all"){
+      // Tüm pokemonları listele
+      dispatch(getPokemonData(allPokemon!))
+    }
+    else if(value.length){
+      // Arama yapılan pokemonları filtrele
       const pokemons = allPokemon?.filter((pokemon)=>
         pokemon.name.includes(value.toLowerCase())
-    );
-    dispatch(getPokemonData(pokemons!))
-    }else{
+      );
+      dispatch(getPokemonData(pokemons!))
+    }
+    else{
+      // Boş input - rastgele 20 pokemon göster
       const clonedPokemons = [...(allPokemon as [])];
       const randomPokemonsId = clonedPokemons
       .sort(()=>Math.random()-Math.random())
